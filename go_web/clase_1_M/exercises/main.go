@@ -34,14 +34,16 @@ func GetAll(ctx *gin.Context) {
 	})
 }
 
+func Welcome(ctx *gin.Context) {
+	name := ctx.DefaultQuery("name", "Bootcamper")
+	ctx.JSON(http.StatusOK, gin.H{
+		"message": "Hola " + name,
+	})
+}
+
 func main() {
 	router := gin.Default()
-	router.GET("/welcome", func(ctx *gin.Context) {
-		name := ctx.DefaultQuery("name", "Bootcamper")
-		ctx.JSON(http.StatusOK, gin.H{
-			"message": "Hola " + name,
-		})
-	})
+	router.GET("/welcome", Welcome)
 	router.GET("/users", GetAll)
 
 	router.Run()
