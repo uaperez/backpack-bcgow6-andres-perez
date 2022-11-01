@@ -15,6 +15,6 @@ func main() {
 
 	pr := router.Group("/products")
 	{
-		pr.GET("/", productRoute)
+		pr.GET("/", productRoute.GetAll())
 	}
 }

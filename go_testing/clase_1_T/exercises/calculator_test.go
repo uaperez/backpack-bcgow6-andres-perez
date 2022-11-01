@@ -17,6 +17,7 @@ func TestSub(t *testing.T) {
 	assert.Equal(t, expected, result, "Número esperado: %v | Número obtenido: %v", expected, result)
 }
 
+// Punto 1
 func TestDivideReceiveCorrectResult(t *testing.T) {
 	// arrange
 	num1 := 10
@@ -29,6 +30,7 @@ func TestDivideReceiveCorrectResult(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+// Punto 3
 func TestDivideReceiveError(t *testing.T) {
 	num1, num2 := 15, 0
 	expected := 0

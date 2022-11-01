@@ -8,7 +8,7 @@ import (
 var ErrNotFound = errors.New("error n1")
 
 func x() error {
-	return fmt.Errorf("Info extra: %w", error1)
+	return fmt.Errorf("Info extra: %w", ErrNotFound)
 }
 
 type MyError struct {
